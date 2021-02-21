@@ -1,4 +1,5 @@
 # Laborator1PA
+Nume student : Timon Roxana Mihaela 
 In acest proiect am definit o clasa, ce contine functia main  in care am inclus :
 1. cum afisez "Hello Word"  in Java ( am utilizat metoda specifica string urilor " System.out.println() ")
 2. am definit un array de string-uri cu ajutorul key-word-ului "String []" cu numele "languages" 
