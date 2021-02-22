@@ -1,0 +1,9 @@
+Nume: Timon Roxana Mihaela 
+
+In acest proiect am implementat urmatoarele functionalitati din partea optionala corespunzatoare Laboratorului 1:
+-Validarea inputului 
+-Generarea unei matrici a unui graph random 
+-Implementarea algoritmului de conexitatea a unui graf ( folosind o parcurgere DFS)
+-Implementarea unui algoritm care determina numarul de componente conexe si care atribuie fiecarui nod o componeneta conexa la care acesta apartine
+-Implementarea unui algoritm de afisare a componentelor conexe 
+-Am folosit functiile System.currentTimeMillis(); pentru a afla timpul de rulare al programului 
