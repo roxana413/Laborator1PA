@@ -33,7 +33,7 @@ public class Optional {
                 System.out.println();
             }
         }
-
+        //creeam un vector visited, utilizat in functiile de mai jos, pentru a afla componentele conexe
         boolean[] visited = new boolean[n];
 
         for (int i = 0; i < visited.length; ) {
@@ -55,7 +55,7 @@ public class Optional {
       System.out.println(t2 - t1);
 
     }
-
+   //am implentat un algoritm dfs pentru a afla daca graful obtinut este conex
     public static void dfs(int i, int[][] mat, boolean[] visited, int[] componenta, int[] nrComponenta) {
 
         visited[i] = true;  // Mark node as "visited"
@@ -71,7 +71,7 @@ public class Optional {
 
         }
     }
-
+   //am implementat o functie care afla nr de componente conexe
     public static void componenteConexe(int n, int[][] mat, boolean[] visited, int[] componenta, int[] nrComponenta) {
         int i;
 
@@ -84,7 +84,7 @@ public class Optional {
 
             }
     }
-
+    //am implementat o functie pentru afisarea componentelor conexe
     public static void afisareComponenteConexe(int n, int[][] mat, boolean[] visited, int[] componenta, int[] nrComponenta) {
         int i, j;
         int[] a = {1};
