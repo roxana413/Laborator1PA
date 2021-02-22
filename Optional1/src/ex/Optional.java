@@ -25,7 +25,7 @@ public class Optional {
             }
         }
         //afisez matricea corespunzatoare grafului doar daca m nu este foarte mare
-        if(n<30_000) {
+        if (n < 30_000) {
             for (int i = 0; i < n; i++) {
                 for (int j = 0; j < n; j++) {
                     System.out.print(m[i][j] + " ");
@@ -49,13 +49,32 @@ public class Optional {
         componenteConexe(n, m, visited, componenta, nrComponenta);
         System.out.println();
         afisareComponenteConexe(n, m, visited, componenta, nrComponenta);
+        for (int i = 0; i < visited.length; ) {
+
+            visited[i++] = false;
+        }
+        System.out.println();
+        dfsTree(0, m, visited);
+        System.out.println("Matricea de adiacenta a arborelui partial este : ");
+        if (n < 30_000) {
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < n; j++) {
+                    if (visited[i]) {
+                        System.out.print(m[i][j] + " ");
+                    }
+                }
+                System.out.println();
+            }
+        }
 
 
-   long t2 = System.currentTimeMillis();
-      System.out.println(t2 - t1);
+        long t2 = System.currentTimeMillis();
+        System.out.println();
+        System.out.println(t2 - t1);
 
     }
-   //am implentat un algoritm dfs pentru a afla daca graful obtinut este conex
+
+    //am implentat un algoritm dfs pentru a afla daca graful obtinut este conex
     public static void dfs(int i, int[][] mat, boolean[] visited, int[] componenta, int[] nrComponenta) {
 
         visited[i] = true;  // Mark node as "visited"
@@ -71,7 +90,8 @@ public class Optional {
 
         }
     }
-   //am implementat o functie care afla nr de componente conexe
+
+    //am implementat o functie care afla nr de componente conexe
     public static void componenteConexe(int n, int[][] mat, boolean[] visited, int[] componenta, int[] nrComponenta) {
         int i;
 
@@ -84,6 +104,7 @@ public class Optional {
 
             }
     }
+
     //am implementat o functie pentru afisarea componentelor conexe
     public static void afisareComponenteConexe(int n, int[][] mat, boolean[] visited, int[] componenta, int[] nrComponenta) {
         int i, j;
@@ -109,6 +130,22 @@ public class Optional {
                 }
                 System.out.println();
             }
+        }
+    }
+
+    public static void dfsTree(int i, int[][] mat, boolean[] visited) {
+
+        visited[i] = true;  // Mark node as "visited"
+
+        //System.out.print(i + "\t");
+
+        for (int j = 0; j < visited.length; j++) {
+
+            if (mat[i][j] == 1 && !visited[j]) {
+
+                dfsTree(j, mat, visited);       // Visit node
+            }
+
         }
     }
 
